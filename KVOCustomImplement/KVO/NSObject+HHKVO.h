@@ -9,9 +9,10 @@
 /**
  A custom simple KVO for learning internal implementation about KVO.
  
- When we meet the three sutiations, app will crash:
- 1. Mutiple - invoke remove observer method;
- 2. Observer is delloced, but observed object still send message to it;
+ As we all known, when we use KVO and meet the three sutiations, app will crash:
+ 
+ 1. The times of invoking remove observer method more than add observer method;
+ 2. Observer is delloced, but observed object still send message to it. EXC_BAD_ACCESS;
  3. Observered object is delloced, but forget remove observer;
  
  But you need't worry about Apple's KVO exceptions if use this.
